@@ -9,8 +9,6 @@ Join our discord **https://discord.gg/ffuRfX9WFF**
 
 Works with **ESX**, **QBCore** and **Qbox**. No other dependencies.
 
-[![Watch the video](https://img.youtube.com/vi/oHKvmyaCFd8/maxresdefault.jpg)](https://www.youtube.com/watch?v=oHKvmyaCFd8)
-
 ## Install
 
 1. Drop the `zero-scuba` folder into your resources.
@@ -49,3 +47,5 @@ INSERT INTO `items` (`name`, `label`) VALUES ('scuba_tank', 'Scuba Tank');
 Use the tank from your inventory, or `/scuba` if you set `Config.UsableItem = false`. Oxygen only drains while you're actually underwater. When it runs out you get a few seconds to surface before drowning can kill you. Press the configured key to take the gear off.
 
 Made by Zero Development.
+
+[![Watch the video](https://img.youtube.com/vi/oHKvmyaCFd8/maxresdefault.jpg)](https://www.youtube.com/watch?v=oHKvmyaCFd8)
