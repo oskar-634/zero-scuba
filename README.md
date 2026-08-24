@@ -35,7 +35,7 @@ INSERT INTO `items` (`name`, `label`) VALUES ('scuba_tank', 'Scuba Tank');
     stack = true,
     close = true,
     consume = 0,
-    server = { export = 'zero-scuba.useScuba' },
+    client = { export = 'zero-scuba.scuba_tank' },
 },
 ```
 
