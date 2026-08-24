@@ -9,7 +9,7 @@ Join our discord **https://discord.gg/ffuRfX9WFF**
 
 Works with **ESX**, **QBCore** and **Qbox**. No other dependencies.
 
-<!-- imgur -->
+[![Watch the video](https://img.youtube.com/vi/oHKvmyaCFd8/maxresdefault.jpg)](https://www.youtube.com/watch?v=oHKvmyaCFd8)
 
 ## Install
 
