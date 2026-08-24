@@ -48,16 +48,29 @@ AddEventHandler('zero-scuba:useScuba', function()
     graceRemaining = 0.0
     wearingGear = true
     setScubaState(PlayerPedId(), true)
-    TriggerServerEvent('zero-scuba:consumeItem')
+
+    if Config.FrameWork ~= 'QBox' then
+        TriggerServerEvent('zero-scuba:consumeItem')
+    end
 end)
+
+if Config.FrameWork == 'QBox' and Config.UsableItem then
+    exports(Config.ItemName, function(data, slot)
+        exports.ox_inventory:useItem(data, function(result)
+            if result then
+                TriggerEvent('zero-scuba:useScuba')
+            end
+        end)
+    end)
+end
 
 CreateThread(function()
     local lastTick = GetGameTimer()
 
     while true do
-        local playerPed = PlayerPedId()
-        local now = GetGameTimer()
-        local elapsed = (now - lastTick) / 1000.0
+        local playerPed  = PlayerPedId()
+        local now        = GetGameTimer()
+        local elapsed    = (now - lastTick) / 1000.0
         lastTick = now
 
         if wearingGear and IsEntityDead(playerPed) then
