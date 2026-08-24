@@ -36,11 +36,6 @@ if Config.UsableItem then
         QBCore.Functions.CreateUseableItem(Config.ItemName, function(source)
             useScuba(source)
         end)
-    elseif Config.FrameWork == 'QBox' then
-        exports.qbx_core:CreateUseableItem(Config.ItemName, function(source)
-            useScuba(source)
-        end)
-
     end
 else
     RegisterCommand('scuba', function(source)
