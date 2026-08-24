@@ -4,6 +4,7 @@ A simple and highly configurable scuba gear script for FiveM. Usable scuba tank 
 for a configurable amount of time, with a mask and tank prop.
 
 Check out our other scripts at **https://zero-development-shop.tebex.io/**
+
 Join our discord **https://discord.gg/ffuRfX9WFF**
 
 Works with **ESX**, **QBCore** and **Qbox**. No other dependencies.
