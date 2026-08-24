@@ -3,6 +3,9 @@
 A simple and highly configurable scuba gear script for FiveM. Usable scuba tank to breathe under water
 for a configurable amount of time, with a mask and tank prop.
 
+Check out our other scripts at **https://zero-development-shop.tebex.io/**
+Join our discord **https://discord.gg/ffuRfX9WFF**
+
 Works with **ESX**, **QBCore** and **Qbox**. No other dependencies.
 
 <!-- imgur -->
@@ -45,4 +48,3 @@ INSERT INTO `items` (`name`, `label`) VALUES ('scuba_tank', 'Scuba Tank');
 Use the tank from your inventory, or `/scuba` if you set `Config.UsableItem = false`. Oxygen only drains while you're actually underwater. When it runs out you get a few seconds to surface before drowning can kill you. Press the configured key to take the gear off.
 
 Made by Zero Development.
-Check out our other scripts at **https://zero-development-shop.tebex.io/**
