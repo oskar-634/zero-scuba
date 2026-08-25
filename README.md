@@ -49,4 +49,4 @@ Use the tank from your inventory, or `/scuba` if you set `Config.UsableItem = fa
 
 Made by Zero Development.
 
-[![Watch the video](https://img.youtube.com/vi/oHKvmyaCFd8/maxresdefault.jpg)](https://www.youtube.com/watch?v=oHKvmyaCFd8)
+[![Watch the video](https://img.youtube.com/vi/j5Wwi2_xuxQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=j5Wwi2_xuxQ)
