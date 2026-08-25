@@ -1,7 +1,7 @@
 # zero-scuba
 
 A simple and highly configurable scuba gear script for FiveM. Usable scuba tank to breathe under water
-for a configurable amount of time, with a mask and tank prop.
+for a configurable amount of time, with a mask, tank prop and hud.
 
 Check out our other scripts at **https://zero-development-shop.tebex.io/**
 
