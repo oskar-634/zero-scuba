@@ -34,7 +34,7 @@ INSERT INTO `items` (`name`, `label`) VALUES ('scuba_tank', 'Scuba Tank');
     weight = 5000,
     stack = true,
     close = true,
-    consume = 0,
+    consume = 1,
     client = { export = 'zero-scuba.scuba_tank' },
 },
 ```
