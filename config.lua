@@ -1,7 +1,11 @@
 Config = {}
 
 --ESX, QBCore or QBox
-Config.FrameWork = 'ESX'
+Config.FrameWork = 'QBox'
+
+-- 'default' uses your framework's own inventory, 'ox' uses ox_inventory
+-- QBox uses ox_inventory, leave this as 'ox'
+Config.Inventory = 'ox'
 
 -- Equip by using item, otherwise use command /scuba
 Config.UsableItem = true
@@ -20,6 +24,8 @@ Config.GracePeriod = 10.0
 
 -- Enable scuba gear visuals (true/false)
 Config.EnableScubaGear = true
+
+Config.Hud = true -- Show oxygen HUD
 
 Config.RemoveGearKey = 73 -- X
 

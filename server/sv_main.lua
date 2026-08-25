@@ -22,12 +22,14 @@ AddEventHandler('zero-scuba:consumeItem', function()
         local Player = QBCore.Functions.GetPlayer(src)
         if not Player then return end
         Player.Functions.RemoveItem(Config.ItemName, 1)
-    elseif Config.FrameWork == 'QBox' then
-        exports.ox_inventory:RemoveItem(src, Config.ItemName, 1)
     end
 end)
 
-if Config.UsableItem then
+if not Config.UsableItem then
+    RegisterCommand('scuba', function(source)
+        useScuba(source)
+    end, false)
+elseif Config.Inventory ~= 'ox' then
     if Config.FrameWork == 'ESX' then
         ESX.RegisterUsableItem(Config.ItemName, function(source)
             useScuba(source)
@@ -37,8 +39,4 @@ if Config.UsableItem then
             useScuba(source)
         end)
     end
-else
-    RegisterCommand('scuba', function(source)
-        useScuba(source)
-    end, false)
 end

@@ -19,6 +19,22 @@ local graceRemaining = 0.0
 local hasScuba = false
 local wearingGear = false
 local busy = false
+local showOxygen = false
+local oxygenLevel = 0
+
+local function DrawOxygen()
+    if not showOxygen then return end
+
+    SetTextFont(4)
+    SetTextScale(0.5, 0.5)
+    SetTextColour(255, 255, 255, 255)
+    SetTextOutline()
+    SetTextCentre(true)
+
+    BeginTextCommandDisplayText('STRING')
+    AddTextComponentSubstringPlayerName(('Oxygen: %d%%'):format(oxygenLevel))
+    EndTextCommandDisplayText(0.5, 0.9)
+end
 
 local function setScubaState(ped, enabled)
     SetEnableScuba(ped, enabled)
@@ -47,14 +63,15 @@ AddEventHandler('zero-scuba:useScuba', function()
     hasScuba = true
     graceRemaining = 0.0
     wearingGear = true
+    showOxygen = true
     setScubaState(PlayerPedId(), true)
 
-    if Config.FrameWork ~= 'QBox' then
+    if Config.Inventory ~= 'ox' then
         TriggerServerEvent('zero-scuba:consumeItem')
     end
 end)
 
-if Config.FrameWork == 'QBox' and Config.UsableItem then
+if Config.Inventory == 'ox' and Config.UsableItem then
     exports(Config.ItemName, function(data, slot)
         exports.ox_inventory:useItem(data, function(result)
             if result then
@@ -76,6 +93,7 @@ CreateThread(function()
         if wearingGear and IsEntityDead(playerPed) then
             wearingGear = false
             hasScuba = false
+            showOxygen = false
             scubaTankOxygen = 0.0
             graceRemaining = 0.0
             removeScubaGear()
@@ -108,6 +126,10 @@ CreateThread(function()
             end
         end
 
+        if wearingGear then
+            oxygenLevel = math.floor((scubaTankOxygen / Config.OxygenDuration) * 100)
+        end
+
         Wait(1000)
     end
 end)
@@ -118,6 +140,9 @@ CreateThread(function()
         if wearingGear and not busy then
             sleep = 0
             helpText(Config.Lang.press_to_remove)
+            if Config.Hud then
+                DrawOxygen()
+            end
             if IsControlJustReleased(0, Config.RemoveGearKey) then
                 local ped = PlayerPedId()
 
